@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Local Community Event Portal</title>
+
+  <!-- Exercise 1: External stylesheet linked here -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Exercise 5: Google Font via <link> -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet" />
+
+  <!-- Exercise 1: Embedded <style> tag for body background (internal CSS) -->
+  <style>
+    /* Internal CSS: body font override for demo */
+    body {
+      font-family: 'Source Sans 3', 'Playfair Display', sans-serif;
+    }
+
+    /* Exercise 8: Demonstrates visibility:hidden vs display:none comparison */
+    .demo-box {
+      display: inline-block;
+      background: #e94560;
+      color: white;
+      padding: 6px 14px;
+      border-radius: 4px;
+      margin: 4px;
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ══════════════════════════════════════════════
+       Exercise 3: ID selector #mainHeader
+       Exercise 4: Gradient background (in CSS)
+  ═══════════════════════════════════════════════ -->
+  <header id="mainHeader">
+    <!-- Exercise 1: INLINE STYLE — makes this heading red -->
+    <h1 style="color: #ff6b6b;">🏛 Local Community Event Portal</h1>
+    <p>Connecting neighbors · Celebrating community · Building tomorrow</p>
+  </header>
+
+  <!-- ══════════════════════════════════════════════
+       Exercise 6: Navigation with link pseudo-classes
+       and list-style removed
+  ═══════════════════════════════════════════════ -->
+  <nav>
+    <ul>
+      <!-- list-style-type: none applied in CSS -->
+      <li><a href="#events">Events</a></li>
+      <li><a href="#admin">Admin Table</a></li>
+      <li><a href="#bulletin">Bulletin</a></li>
+      <li><a href="#register">Register</a></li>
+      <li><a href="#box-model">Box Model</a></li>
+    </ul>
+  </nav>
+
+  <!-- ══════════════════════════════════════════════
+       Exercise 3: Class selector .eventCard
+       Exercise 4: Colors (HEX + RGBA)
+       Exercise 8: Box model - border, padding, margin
+  ═══════════════════════════════════════════════ -->
+  <section class="events-section" id="events">
+    <!-- Exercise 3: Element selector h2 styled in CSS -->
+    <h2 class="section-title">Upcoming Events</h2>
+
+    <div class="cards-grid">
+
+      <!-- Exercise 3: .eventCard class selector -->
+      <div class="eventCard">
+        <span class="event-tag">Music</span>
+        <h3>Summer Music Fest</h3>
+        <p>Join us for an evening of live performances by local artists at the city amphitheatre. All genres welcome!</p>
+        <a href="#register" class="cta-button">Register Now</a>
+      </div>
+
+      <div class="eventCard">
+        <span class="event-tag">Workshop</span>
+        <h3>Urban Gardening 101</h3>
+        <p>Learn how to grow vegetables on your balcony. Beginners welcome. Tools and seeds provided.</p>
+        <a href="#register" class="cta-button">Register Now</a>
+      </div>
+
+      <div class="eventCard">
+        <span class="event-tag">Sports</span>
+        <h3>Community 5K Run</h3>
+        <p>Lace up your shoes for a fun run through the riverside trail. All fitness levels are encouraged to join!</p>
+        <a href="#register" class="cta-button">Register Now</a>
+      </div>
+
+    </div>
+
+    <!-- Exercise 8: visibility:hidden vs display:none demo -->
+    <div id="box-model" style="margin-top:40px; padding:20px; border:2px dashed #0f3460; border-radius:10px; background:#fff;">
+      <h2 style="color:#0f3460; margin-bottom:12px;">📦 Exercise 8 — Box Model &amp; Visibility Demo</h2>
+      <p style="margin-bottom:10px; color:#555;">The red box below uses <strong>visibility: hidden</strong> — it is invisible but <em>still takes up space</em>. The gap proves it.</p>
+      <span class="demo-box">Box A (visible)</span>
+      <!-- Exercise 8: visibility hidden - invisible but holds space -->
+      <span class="demo-box hidden-visibility">Box B (hidden, takes space)</span>
+      <span class="demo-box">Box C (visible)</span>
+
+      <p style="margin:14px 0 8px; color:#555;">Below: <strong>display: none</strong> — Box E is completely removed. No gap between D and F.</p>
+      <span class="demo-box">Box D (visible)</span>
+      <!-- Exercise 8: display none - completely removed -->
+      <span class="demo-box hidden-display">Box E (display:none)</span>
+      <span class="demo-box">Box F (visible)</span>
+
+      <p style="margin-top:14px; font-size:0.85rem; color:#888;">💡 Hover over the Event Cards above to see the <strong>outline</strong> property in action.</p>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════
+       Exercise 7: Table Styling
+       - border-collapse, zebra striping, nth-child
+  ═══════════════════════════════════════════════ -->
+  <section class="table-section" id="admin">
+    <h2 class="section-title">Events Admin Table</h2>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Event Name</th>
+            <th>Date</th>
+            <th>Venue</th>
+            <th>Category</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Exercise 7: tr:nth-child(even) gives zebra stripes in CSS -->
+          <tr>
+            <td>Summer Music Fest</td>
+            <td>Jun 15, 2025</td>
+            <td>City Amphitheatre</td>
+            <td>Music</td>
+            <td>✅ Open</td>
+          </tr>
+          <tr>
+            <td>Urban Gardening 101</td>
+            <td>Jun 22, 2025</td>
+            <td>Community Center</td>
+            <td>Workshop</td>
+            <td>✅ Open</td>
+          </tr>
+          <tr>
+            <td>Community 5K Run</td>
+            <td>Jul 4, 2025</td>
+            <td>Riverside Trail</td>
+            <td>Sports</td>
+            <td>🔜 Soon</td>
+          </tr>
+          <tr>
+            <td>Art in the Park</td>
+            <td>Jul 10, 2025</td>
+            <td>Central Park</td>
+            <td>Art</td>
+            <td>✅ Open</td>
+          </tr>
+          <tr>
+            <td>Food & Culture Fair</td>
+            <td>Jul 20, 2025</td>
+            <td>Town Square</td>
+            <td>Cultural</td>
+            <td>🔜 Soon</td>
+          </tr>
+          <tr>
+            <td>Tech for Seniors</td>
+            <td>Jul 28, 2025</td>
+            <td>Library Hall</td>
+            <td>Education</td>
+            <td>🔒 Full</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════
+       Exercise 9: Multi-Column Layout (newspaper)
+  ═══════════════════════════════════════════════ -->
+  <section class="bulletin-section" id="bulletin">
+    <h2 class="section-title">📰 Community Bulletin</h2>
+    <!-- Exercise 9: column-count: 2; column-gap: 30px; column-rule applied in CSS -->
+    <div class="bulletin-text">
+      <p>
+        Welcome to the July edition of our Community Bulletin! This month marks a milestone
+        — our portal has connected over 5,000 residents across 12 neighbourhoods. From
+        park cleanups to tech workshops, the spirit of community has never been stronger.
+      </p>
+      <br />
+      <p>
+        The Parks &amp; Recreation department reminds residents that Riverside Trail will
+        be partially closed from June 28 to July 3 for resurfacing. Cyclists and joggers
+        are advised to use the alternate Northern Loop during this period.
+      </p>
+      <br />
+      <p>
+        The Library is expanding its digital literacy program for seniors. Volunteer
+        tutors are needed every Tuesday evening. If you have basic computer skills and a
+        passion for helping others, please sign up at the front desk or register online
+        through this portal. Refreshments are provided.
+      </p>
+      <br />
+      <p>
+        Construction on the new Community Hub is on schedule. The facility will feature
+        a 200-seat auditorium, three multi-purpose halls, a rooftop garden, and
+        co-working spaces for local entrepreneurs. Completion is expected by October 2025.
+      </p>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════
+       Exercise 8: Form with outline on focus
+       Exercise 5: Typography in form
+  ═══════════════════════════════════════════════ -->
+  <section class="form-section" id="register">
+    <div class="event-form">
+      <h2 class="section-title" style="margin-bottom:24px;">Event Registration</h2>
+
+      <label for="name">Full Name</label>
+      <!-- Exercise 8: outline:3px solid #e94560 appears on focus (see CSS) -->
+      <input type="text" id="name" placeholder="Your full name" />
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" placeholder="you@example.com" />
+
+      <label for="event">Choose Event</label>
+      <select id="event">
+        <option value="">-- Select an event --</option>
+        <option>Summer Music Fest</option>
+        <option>Urban Gardening 101</option>
+        <option>Community 5K Run</option>
+        <option>Art in the Park</option>
+      </select>
+
+      <label for="message">Special Requirements</label>
+      <textarea id="message" rows="4" placeholder="Any accessibility needs or notes..."></textarea>
+
+      <button class="cta-button" style="width:100%; padding:14px; font-size:1rem;">
+        Submit Registration
+      </button>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════
+       Exercise 6: Footer list with link pseudo-classes
+  ═══════════════════════════════════════════════ -->
+  <footer>
+    <ul>
+      <li><a href="#events">Events</a></li>
+      <li><a href="#admin">Admin</a></li>
+      <li><a href="#bulletin">Bulletin</a></li>
+      <li><a href="#register">Register</a></li>
+    </ul>
+    <p>© 2025 Local Community Event Portal. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
